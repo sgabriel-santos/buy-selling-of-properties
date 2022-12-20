@@ -1,0 +1,1 @@
+# buy_selling_of_properties
