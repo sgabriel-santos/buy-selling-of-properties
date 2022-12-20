@@ -1,0 +1,47 @@
+<form class="center">
+    <div class="form">
+        <img class="image-icon" src="../../../assets/images/user_icon.png">
+        <app-input-validator
+            class="input input-login"
+            [variableFormControl]="name"
+            [labelTitle]="'Usuário'"
+            [labelRequiredInput]="label_required_user"
+            [validatorTextRequired]="'required'"
+            [inputType]="'text'"
+            [submited]="submited"
+            [colSizeClass]="'col-12'"
+            (input)="onChangeInput()"
+            [pAutoFocus]="true"
+            name="name"
+            inputId="name"
+            >
+        </app-input-validator>
+
+        <app-input-validator
+            class="input input-password"
+            [variableFormControl]="password"
+            [labelTitle]="'Senha'"
+            [labelRequiredInput]="label_required_password"
+            [validatorTextRequired]="'required'"
+            [inputType]="'password'"
+            [submited]="submited"
+            [colSizeClass]="'col-12'"
+            (input)="onChangeInput()"
+        >
+        </app-input-validator>
+
+        <div class="buttons">
+            <button pBt
+            nOK pButton type="submit" [label]="'Entrar'" (click)="onClick()"></button>
+        </div>
+        <div class="content-cadastro">
+            <div class="label-castro">
+                Não Possui Cadastro?
+            </div>
+            <div class="link-cadastro" routerLink="/cadastro">
+                Cadastrar
+            </div>
+        </div>
+    </div>
+</form>
+<app-toast></app-toast>

@@ -1,0 +1,118 @@
+@import "/src/app/middleware/scss/table.component.scss";
+
+::ng-deep{
+  .p-dialog-title{
+    color: #A50034;
+  }
+
+  .p-dialog{
+    .p-dialog-content{
+      padding-bottom: 40px;
+    }
+
+    .p-dialog-header .p-dialog-title {
+      font-weight: 600;
+      font-size: 28px;
+    }
+
+    .p-dialog-footer{
+      text-align: right;
+      justify-content: space-between;
+      flex-shrink: 0;
+      display: flex;
+    }
+  }
+
+  .select-position{
+    .p-dropdown-panel{
+      top: 40px!important;
+    }
+
+    .p-dropdown-items-wrapper{
+      max-height: 120px!important;
+    }
+  }
+
+  .select-status-position{
+    .p-dropdown-panel{
+      top: -88px!important;
+    }
+  }
+
+  .select-content{
+    ::-webkit-scrollbar {
+      width: 5px;
+      height: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #A50034;
+      border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #A50034;
+    }
+  }
+}
+
+[pButton] {
+  margin-top: 30px;
+  border-radius: 20px;
+  width: 121px;
+  height: 37px;
+  font-size: 16px;
+  box-sizing: border-box;
+  display: block;
+}
+
+.select-content{
+  width: 100%;
+  height: 37px;
+}
+
+.select-status-position{
+  width: 50%;
+}
+
+.select-position{
+  width: 50%;
+}
+
+.label-dropdown{
+  color: #6c757d;
+  font-size: 12px;
+  margin-left: 8px;
+  margin-bottom: 8px;
+}
+
+.margin-top-float-input-first{
+  margin-top: 18px;
+}
+
+.margin-top-float-input{
+  margin-top: 27px;
+}
+
+.field {
+  margin-bottom: 1.5rem;
+}
+
+.margin-top-select{
+  margin-top: 20px;
+}
+
+.margin-top-select-user-screen{
+  margin-top: 10px;
+}
+
+.input-space-between{
+  justify-content: space-between;
+  flex-shrink: 0;
+  display: flex;
+}

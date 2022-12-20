@@ -1,0 +1,106 @@
+.center{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background-color: #f6f4d2;
+}
+
+.image-icon{
+    width: 15vh;
+    height: 15vh;
+}
+
+.login-title{
+    font-size: 4vh;
+    color: #f19c79;
+    text-align: center;
+}
+
+img{
+    height: 94px;
+    width: 142px;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    width: 324px;
+    height: 419px;
+    border-radius: 10px;
+    padding-top: 20px;
+}
+
+h5 {
+    color: #6A6A6A;
+    font-size: 25px;
+    justify-content: left;
+    justify-items: left;
+    justify-self: left;
+    align-self: flex-start;
+    margin: 20px 0px 10px 0px;
+}
+
+.input-login{
+    margin-top: 44px;
+    margin-bottom: 45px;
+}
+
+.input-password{
+    margin-bottom: 30px;
+}
+
+label{
+    font-size: 20px;
+    color: #6A6A6A;
+}
+
+.input{
+    width: 254px;
+    height: 42px;
+}
+
+[pButton] {
+    border-radius: 59px;
+    width: 121px;
+    height: 42px;
+    font-size: 20px;
+    box-sizing: border-box;
+
+}
+
+[pBtnOK]{
+    margin-right: 12px;
+}
+
+.buttons{
+    display: block;
+}
+
+[pBtnOK], [pBtnOK]:hover{
+    background-color: #63A70A;
+    border: 0;
+}
+
+[pBtnCancel], [pBtnCancel]:hover{
+    background-color: #A50034;
+    border: 0;
+}
+
+.content-cadastro{
+    font-size: 2.5vh;
+    text-align: center;
+}
+
+.label-castro{
+    margin-top: 1rem;
+    color: gray;
+}
+
+.link-cadastro{
+    color: blue;
+    cursor: pointer;
+}

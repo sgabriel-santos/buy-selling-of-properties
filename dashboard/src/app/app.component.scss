@@ -1,0 +1,113 @@
+.content{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: calc(100% - 120px);
+  align-items: center;
+  background-color: #F2F2F2;
+  padding: 10px 0 40px 0;
+}
+
+.card{
+  padding: 10px 3vw 30px 3vw;
+  background-color: white;
+  width: 80vw;
+  border-radius: 13px;
+}
+
+.text-align-center{
+  text-align: center!important;
+}
+
+.align-end{
+  display: flex;
+  justify-content: flex-end;
+}
+
+//Field Disable
+.input-disabled{
+  background-color: #DEDEDE;
+  color: #6A6A6A;
+  cursor: not-allowed;
+}
+
+//Remove Blue Shadow Box in all components
+::ng-deep{
+
+  .p-dropdown {
+    width: auto;
+  }
+
+  .p-dropdown .p-placeholder, .p-inputtext {
+    color: black;
+  }
+
+  .p-dropdown:not(.p-disabled).p-focus{
+    box-shadow: none!important;
+  }
+
+  .p-inputtext:enabled:focus{
+    box-shadow: none;
+    border-color: none;
+  }
+
+  .p-inputtext:enabled:hover{
+    border-color: none;
+  }
+
+  .p-tabview.p-component, .p-component{
+    font-family: "LG_Smart_Regular" !important;
+  }
+
+  .p-listbox .p-listbox-list .p-listbox-item:focus{
+    box-shadow: none;
+  }
+
+  .p-button:focus {
+    box-shadow: none;
+  }
+
+  ::-webkit-scrollbar {
+    width: 0.5vw;
+    height: 1vh;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #A50034;
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #A50034;
+  }
+
+}
+
+//Buttons Positive and Negative
+#button-save, #button-save:hover{
+  background-color: #63A70A;
+  border: 0;
+}
+
+#button-cancel, #button-cancel:hover{
+  background-color: #A50034;
+  border: 0;
+}
+
+//Buttons Positive and Negative Outlined
+#button-save-outlined, #button-save-outlined:hover{
+  color: #63A70A;
+}
+
+#button-cancel-outlined, #button-cancel-outlined:hover{
+  color: #A50034;
+}
+
+#button-alert-outlined, #button-alert-outlined:hover{
+  color: #F38A00;
+}

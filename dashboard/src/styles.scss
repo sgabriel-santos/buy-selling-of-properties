@@ -1,0 +1,21 @@
+@font-face {
+  font-family: 'LG_Smart_Regular';
+  src: url(./assets/fonts/LG_Smart_Regular.ttf) format('truetype');
+  src: url(./assets/fonts/LG_Smart_Light.ttf) format('truetype');
+  src: url(./assets/fonts/LG_Smart_Bold.ttf) format('truetype');
+  src: url(./assets/fonts/LG_Smart_Bold_Italic.ttf) format('truetype');
+  src: url(./assets/fonts/LG_Smart_Regular_Italic.ttf) format('truetype');
+  src: url(./assets/fonts/LG_Smart_SemiBold.ttf) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html{
+  height: 100%;
+}
+
+body{
+  font-family: 'LG_Smart_Regular'!important;
+  height: 100%;
+  margin: 0;
+}

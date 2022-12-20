@@ -1,0 +1,8 @@
+@import "/src/app/middleware/scss/table.component.scss";
+@import "/src/app/middleware/scss/dialog.component.scss";
+
+.buttons-align-right{
+  width: 100%;
+  justify-content: right;
+  display: flex;
+}
