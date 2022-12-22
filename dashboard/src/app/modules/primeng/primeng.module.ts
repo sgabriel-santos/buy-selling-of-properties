@@ -24,6 +24,9 @@ import { ToolbarModule } from 'primeng/toolbar';
 import { TooltipModule } from 'primeng/tooltip';
 import { TreeModule } from 'primeng/tree';
 import { TreeTableModule } from 'primeng/treetable';
+import { DataViewModule } from 'primeng/dataview';
+import { RatingModule } from 'primeng/rating';
+import { MenuModule } from 'primeng/menu';
 
 @NgModule({
   declarations: [],
@@ -51,7 +54,10 @@ import { TreeTableModule } from 'primeng/treetable';
     ProgressBarModule,
     TreeModule,
     CalendarModule,
-    MultiSelectModule
+    MultiSelectModule,
+    DataViewModule,
+    RatingModule,
+    MenuModule
   ],
   exports:[
     ButtonModule,
@@ -76,7 +82,10 @@ import { TreeTableModule } from 'primeng/treetable';
     ProgressBarModule,
     TreeModule,
     CalendarModule,
-    MultiSelectModule
+    MultiSelectModule,
+    DataViewModule,
+    RatingModule,
+    MenuModule
   ],
   providers: [
     ConfirmationService,

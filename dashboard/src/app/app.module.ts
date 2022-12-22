@@ -19,11 +19,21 @@ import { AppRoutingModule } from './app-routing.module';
 
 //Dashboard
 import { NgApexchartsModule } from 'ng-apexcharts';
+import { HomeComponent } from './components/home/home.component';
+import { MenuComponent } from './components/menu/menu.component';
+import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
+import { RegisterImmobileComponent } from './components/register-immobile/register-immobile.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    HomeComponent,
+    MenuComponent,
+    EditProfileComponent,
+    RegisterImmobileComponent,
+    DashboardComponent
   ],
   imports: [
     AppRoutingModule,

@@ -1,0 +1,25 @@
+.menu{
+    height: 80vh;
+    width: 10vw;
+}
+
+.image-icon-menu{
+    height: 4rem;
+    width: 4rem;
+}
+
+.profile{
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.profile label{
+    font-size: 1rem;
+    color: #495057;
+}
+
+::ng-deep{
+    .p-menu{
+        border: 0!important;
+    }
+}
