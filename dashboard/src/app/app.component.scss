@@ -33,19 +33,6 @@
 
 //Remove Blue Shadow Box in all components
 ::ng-deep{
-
-  .p-dropdown {
-    width: auto;
-  }
-
-  .p-dropdown .p-placeholder, .p-inputtext {
-    color: black;
-  }
-
-  .p-dropdown:not(.p-disabled).p-focus{
-    box-shadow: none!important;
-  }
-
   .p-inputtext:enabled:focus{
     box-shadow: none;
     border-color: none;
@@ -66,26 +53,6 @@
   .p-button:focus {
     box-shadow: none;
   }
-
-  ::-webkit-scrollbar {
-    width: 0.5vw;
-    height: 1vh;
-  }
-
-  ::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 10px;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background: #A50034;
-    border-radius: 10px;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    background: #A50034;
-  }
-
 }
 
 //Buttons Positive and Negative

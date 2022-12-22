@@ -5,7 +5,7 @@
 ### 1.1 Installing project dependencies
 
 - Install [NodeJs](https://nodejs.org/en/)
-- Open cmd in the `IHR-SE\dashboard` directory
+- Open cmd in the `buy_selling_of_properties\dashboard` directory
 - Install [Angular CLI](https://github.com/angular/angular-cli) with `npm install -g @angular/cli`
 - Install the project dependencies with: `npm i`
 
@@ -19,7 +19,7 @@ After that, the project is successfully configured
 ### 1.2 Starting the FrontEnd application
 
 To test correctly:
-- Open cmd in the `IHR-SE\dashboard` directory again
+- Open cmd in the `buy_selling_of_properties\dashboard` directory again
 - perform this command: `ng serve`
 - The server will open on http://localhost:4200/
 

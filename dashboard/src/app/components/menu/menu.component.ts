@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PrimeNGConfig, MenuItem } from 'primeng/api';
 import { Router } from '@angular/router';
+import jwt_decode from "jwt-decode";
 
 @Component({
   selector: 'app-menu',
@@ -9,13 +10,17 @@ import { Router } from '@angular/router';
 })
 export class MenuComponent implements OnInit {
   items: MenuItem[];
-
+  user: any = ''
+  
   constructor(
     private primengConfig: PrimeNGConfig,
     private router: Router
   ) {}
 
   ngOnInit(): void {
+    let token = localStorage.getItem('token');
+    this.user = jwt_decode(token);
+
     this.primengConfig.ripple = true;
 
     this.items = [{
