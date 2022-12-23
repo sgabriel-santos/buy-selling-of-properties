@@ -1,5 +1,5 @@
 export interface User {
-    id?: number,
+    id?: number;
     name?: string;
     global_id?: string;
     username?:string;

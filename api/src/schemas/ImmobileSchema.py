@@ -8,6 +8,13 @@ class ImmobileCreate(BaseModel):
     title: str
     description: Union[str, None] = None
     price: str
+    n_rooms: int
+    square_meters: int
+    street: str
+    neighborhood: str
+    city: str
+    state: str
+    cep: str
     localization: Union[str, None] = None
 
 

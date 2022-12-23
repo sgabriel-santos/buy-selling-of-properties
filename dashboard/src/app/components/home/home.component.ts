@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PrimeNGConfig } from 'primeng/api';
-import { ProductService } from './productService';
+import { ImmobileService } from 'src/app/services/immobile/immobile.service';
 
 @Component({
   selector: 'app-home',
@@ -20,20 +20,22 @@ export class HomeComponent implements OnInit {
   sortKey: any
 
   constructor(
-    private productService: ProductService, 
     private primengConfig: PrimeNGConfig,
     private router: Router,
+    private immobileService: ImmobileService
   ) { }
 
   ngOnInit() {
-      this.productService.getProducts().then(data => this.products = data);
+    this.immobileService.get_immobiles().subscribe({
+      next: response => this.products = response
+    })
 
-      this.sortOptions = [
-          {label: 'Price High to Low', value: '!price'},
-          {label: 'Price Low to High', value: 'price'}
-      ];
+    this.sortOptions = [
+        {label: 'Price High to Low', value: '!price'},
+        {label: 'Price Low to High', value: 'price'}
+    ];
 
-      this.primengConfig.ripple = true;
+    this.primengConfig.ripple = true;
   }
 
   onProductClicked(product){

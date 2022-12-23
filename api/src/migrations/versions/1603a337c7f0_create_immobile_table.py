@@ -29,6 +29,13 @@ def upgrade() -> None:
         sa.Column('description', sa.String(5000)),
         sa.Column('price', sa.String(50), nullable=False),
         sa.Column('datetime', sa.TIMESTAMP, nullable=False, server_default=sa.func.now()),
+        sa.Column('n_rooms', sa.Integer, nullable=False),
+        sa.Column('square_meters', sa.Integer, nullable=False),
+        sa.Column('street', sa.String(50), nullable=False),
+        sa.Column('neighborhood', sa.String(50), nullable=False),
+        sa.Column('city', sa.String(50), nullable=False),
+        sa.Column('state', sa.String(50), nullable=False),
+        sa.Column('cep', sa.String(50), nullable=False),
         sa.Column('localization', sa.String(500))
     )
 

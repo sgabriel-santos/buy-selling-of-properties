@@ -21,8 +21,8 @@
                         <div class="product-list-detail">
                             <img class="image-apartamento" src="../../../assets/images/imagem_apartamento.jpg">
                             <div class="adress-detail-list">
-                                <div class="product-name">{{product.name}}</div>
-                                <div class="product-description">{{product.description}}</div>
+                                <div class="product-street">{{product.street}}</div>
+                                <div class="product-address">{{product.neighborhood + ', ' + product.city}}</div>
                                 <div class="details-card">
                                     <div class="content-detail">
                                         <svg class="icon-card" focusable="false" viewBox="0 0 24 24" color="inherit" aria-hidden="true" fill="none" style="color: rgb(var(--tokens-alias-color-text-lighter));"><path fill="currentColor" fill-rule="evenodd" d="M1.5 8v8.25h21V8h-21zM3 14.75V9.5h3.75v3h1.5v-3h3v3h1.5v-3h3v3h1.5v-3H21v5.25H3z" clip-rule="evenodd"></path></svg>
@@ -36,7 +36,7 @@
                             </div>
                         </div>
                         <div class="product-list-action">
-                            <span class="product-price">${{product.price}}</span>
+                            <span class="product-price">R$ {{product.price}}</span>
                             <!-- <p-button icon="pi pi-shopping-cart" label="Add to Cart" [disabled]="product.inventoryStatus === 'OUTOFSTOCK'"></p-button> -->
                         </div>
                     </div>
@@ -48,16 +48,16 @@
                         <img class="image-apartamento" src="../../../assets/images/imagem_apartamento.jpg">
                         <div class="product-grid-item-content">
                             <div class="property-type">Apartamento</div>
-                            <div class="product-name">{{product.name}}</div>
-                            <div class="product-description">{{product.description}}</div>
+                            <div class="product-street">{{product.street}}</div>
+                            <div class="product-address">{{product.neighborhood + ', ' + product.city}}</div>
                             <div class="details-card">
                                 <div class="content-detail">
                                     <svg class="icon-card" focusable="false" viewBox="0 0 24 24" color="inherit" aria-hidden="true" fill="none" style="color: rgb(var(--tokens-alias-color-text-lighter));"><path fill="currentColor" fill-rule="evenodd" d="M1.5 8v8.25h21V8h-21zM3 14.75V9.5h3.75v3h1.5v-3h3v3h1.5v-3h3v3h1.5v-3H21v5.25H3z" clip-rule="evenodd"></path></svg>
-                                    <div class="label-detail">64m²</div>
+                                    <div class="label-detail">{{product.square_meters}}m²</div>
                                 </div>
                                 <div class="content-detail">
                                     <svg class="icon-card" focusable="false" viewBox="0 0 24 24" color="inherit" aria-hidden="true" fill="none" style="color: rgb(var(--tokens-alias-color-text-lighter));"><path fill="currentColor" fill-rule="evenodd" d="M1.5 5H3v9h8.25V7.25H22.5V20H21v-4.5H3v4.125H1.5V5zM21 14h-8.25V8.75H21V14z" clip-rule="evenodd"></path><path fill="currentColor" fill-rule="evenodd" d="M7.125 7.25a2.625 2.625 0 100 5.25 2.625 2.625 0 000-5.25zM6 9.875a1.125 1.125 0 112.25 0 1.125 1.125 0 01-2.25 0z" clip-rule="evenodd"></path></svg>
-                                    <div class="label-detail">2 dorms.</div>
+                                    <div class="label-detail">{{product.n_rooms}} dorms.</div>
                                 </div>
                             </div>
                             <div class="product-grid-item-bottom">
