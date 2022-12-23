@@ -24,6 +24,7 @@ import { MenuComponent } from './components/menu/menu.component';
 import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 import { RegisterImmobileComponent } from './components/register-immobile/register-immobile.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { ImmobileDetailComponent } from './components/immobile-detail/immobile-detail.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     MenuComponent,
     EditProfileComponent,
     RegisterImmobileComponent,
-    DashboardComponent
+    DashboardComponent,
+    ImmobileDetailComponent
   ],
   imports: [
     AppRoutingModule,

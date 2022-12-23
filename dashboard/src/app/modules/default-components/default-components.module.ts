@@ -8,7 +8,6 @@ import { NgxMaskModule, IConfig } from 'ngx-mask';
 import { ConfirmDialogComponent } from 'src/app/default-components/confirm-dialog/confirm-dialog.component';
 import { ToastComponent } from 'src/app/default-components/toast/toast.component';
 import { InputValidatorComponent } from 'src/app/default-components/input-validator/input-validator.component';
-import { ProgressSpinnerComponent } from 'src/app/default-components/progress-spinner/progress-spinner.component';
 import { LabelErrorComponent } from 'src/app/default-components/label-error/label-error.component';
 
 
@@ -20,7 +19,6 @@ const maskConfig: Partial<IConfig> = {
   declarations: [
     ToastComponent,
     InputValidatorComponent,
-    ProgressSpinnerComponent,
     LabelErrorComponent,
   ],
   imports: [
@@ -32,7 +30,6 @@ const maskConfig: Partial<IConfig> = {
   exports:[
     ToastComponent,
     InputValidatorComponent,
-    ProgressSpinnerComponent,
     LabelErrorComponent
   ],
   providers: [

@@ -16,12 +16,24 @@
                 </div>
             </ng-template>
             <ng-template let-product pTemplate="listItem">
-                <div class="p-col-1">
-                    <div class="product-list-item">
+                <div class="col-8">
+                    <div class="product-list-item add-cursor" (click)="onProductClicked(product)">
                         <div class="product-list-detail">
                             <img class="image-apartamento" src="../../../assets/images/imagem_apartamento.jpg">
-                            <div class="product-name">{{product.name}}</div>
-                            <div class="product-description">{{product.description}}</div>
+                            <div class="adress-detail-list">
+                                <div class="product-name">{{product.name}}</div>
+                                <div class="product-description">{{product.description}}</div>
+                                <div class="details-card">
+                                    <div class="content-detail">
+                                        <svg class="icon-card" focusable="false" viewBox="0 0 24 24" color="inherit" aria-hidden="true" fill="none" style="color: rgb(var(--tokens-alias-color-text-lighter));"><path fill="currentColor" fill-rule="evenodd" d="M1.5 8v8.25h21V8h-21zM3 14.75V9.5h3.75v3h1.5v-3h3v3h1.5v-3h3v3h1.5v-3H21v5.25H3z" clip-rule="evenodd"></path></svg>
+                                        <div class="label-detail">64m²</div>
+                                    </div>
+                                    <div class="content-detail">
+                                        <svg class="icon-card" focusable="false" viewBox="0 0 24 24" color="inherit" aria-hidden="true" fill="none" style="color: rgb(var(--tokens-alias-color-text-lighter));"><path fill="currentColor" fill-rule="evenodd" d="M1.5 5H3v9h8.25V7.25H22.5V20H21v-4.5H3v4.125H1.5V5zM21 14h-8.25V8.75H21V14z" clip-rule="evenodd"></path><path fill="currentColor" fill-rule="evenodd" d="M7.125 7.25a2.625 2.625 0 100 5.25 2.625 2.625 0 000-5.25zM6 9.875a1.125 1.125 0 112.25 0 1.125 1.125 0 01-2.25 0z" clip-rule="evenodd"></path></svg>
+                                        <div class="label-detail">2 dorms.</div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="product-list-action">
                             <span class="product-price">${{product.price}}</span>
@@ -32,7 +44,7 @@
             </ng-template>
             <ng-template let-product pTemplate="gridItem">
                 <div class="col-12 md:col-4">
-                    <div class="product-grid-item card card-element" (click)="onProductClicked(product)">
+                    <div class="product-grid-item card add-cursor" (click)="onProductClicked(product)">
                         <img class="image-apartamento" src="../../../assets/images/imagem_apartamento.jpg">
                         <div class="product-grid-item-content">
                             <div class="property-type">Apartamento</div>

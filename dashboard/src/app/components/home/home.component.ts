@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { PrimeNGConfig } from 'primeng/api';
 import { ProductService } from './productService';
 
@@ -18,7 +19,11 @@ export class HomeComponent implements OnInit {
 
   sortKey: any
 
-  constructor(private productService: ProductService, private primengConfig: PrimeNGConfig) { }
+  constructor(
+    private productService: ProductService, 
+    private primengConfig: PrimeNGConfig,
+    private router: Router,
+  ) { }
 
   ngOnInit() {
       this.productService.getProducts().then(data => this.products = data);
@@ -32,7 +37,7 @@ export class HomeComponent implements OnInit {
   }
 
   onProductClicked(product){
-    console.log(product)
+    this.router.navigate([`/immobile-detail`], {queryParams: {id: product.id}})
   }
   
   onSortChange(event) {
