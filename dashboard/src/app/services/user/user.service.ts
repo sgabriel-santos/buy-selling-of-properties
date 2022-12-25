@@ -54,29 +54,12 @@ export class UserService {
 
   /** POST: add a new user to the server */
   addUser(user: User): Observable<User> {
-    return this.http.post<User>(this.usersUrl, {
-      global_id: user.global_id,
-      name: user.name,
-      username: user.username,
-      email: user.email,
-      department_name: user.department_name,
-      department_id: user.department_id,
-      role: user.role,
-      is_active: user.is_active}, this.httpOptionsJson())
+    return this.http.post<User>(this.usersUrl, user, this.httpOptionsJson())
   }
 
   /** PUT: update the user on the server */
   updateUser(user: User): Observable<any> {
     const url = `${this.usersUrl}/${user.id}`;
-    return this.http.put(url, {
-      global_id: user.global_id,
-      name: user.name,
-      username: user.username,
-      email: user.email,
-      department_name: user.department_name,
-      department_id: user.department_id,
-      role: user.role,
-      is_active: user.is_active,
-      password: "123"}, this.httpOptionsJson());
+    return this.http.put(url, user, this.httpOptionsJson());
   }
 }

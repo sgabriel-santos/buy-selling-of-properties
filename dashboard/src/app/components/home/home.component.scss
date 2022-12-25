@@ -1,6 +1,7 @@
 .home-content{
     display: flex;
     flex-direction: row;
+    height: 100vh;
 }
 
 .menu{
@@ -9,8 +10,8 @@
 }
 
 .content-table{
-    height: 94.7vh;
     width: 90vw;
+    height: 100vh;
     overflow-y: scroll;
 }
 

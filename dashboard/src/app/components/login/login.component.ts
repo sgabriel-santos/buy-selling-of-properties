@@ -12,12 +12,10 @@ import { ConfirmationService, MessageService } from 'primeng/api';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+  username: string;
+  password: string;
 
-  name = new FormControl('', [Validators.required]);
-  password = new FormControl('', [Validators.required]);
-  submited = false;
-  label_required_user = "Login Obrigatório!";
-  label_required_password = "Senha Obrigatória!";
+  user = {name: '', username: '', password: ''}
 
   constructor(
     private messageService: MessageService,
@@ -28,44 +26,20 @@ export class LoginComponent implements OnInit {
     
   ) { }
 
-  onChangeInput(){
-    this.label_required_user = "Login Obrigatório!";
-    this.label_required_password = "Senha Obrigatória!";
-  }
-
   ngOnInit(): void {
-
-  }
-
-  getParams(){
-    return this.label_required_password
-  }
-
-  onClick(){
-    this.submited = true;
-    this.doLogin()
-  }
-
-  invalid_username_password(){
-    this.name = new FormControl('', [Validators.required]);
-    this.label_required_user = ""
-
-    this.password = new FormControl('', [Validators.required]);
-    this.label_required_password = "O login ou a senha informada está incoreta!"
-  }
-
-  not_active_username_password(){
-    this.name = new FormControl('', [Validators.required]);
-    this.label_required_user = ""
-
-    this.password = new FormControl('', [Validators.required]);
-    this.label_required_password = "Usuário inativo!"
+    document.querySelectorAll('.info-item .btn').forEach(element => {
+      element.addEventListener('click', () => {
+        const el_containter = document.querySelector('.container') as HTMLDivElement
+        el_containter.classList.toggle('log-in')
+      })
+    })
+    
   }
 
   doLogin(): void{
-		let username = this.name.value
-		let password = this.password.value
-    if( username && password){
+		let username = this.username
+		let password = this.password
+    if( this.username && this.password){
       this.loginService.login(username, password).subscribe({
         next: res => {
           localStorage.setItem("token", res.access_token);
@@ -79,9 +53,33 @@ export class LoginComponent implements OnInit {
             life: 3000 })
         }
       })
-    }
-    else {
-      this.onChangeInput()
+    }else{
+      this.messageService.add({
+        severity: 'error',
+        summary: 'Erro',
+        detail: 'Preencha todos os campos obrigatórios!',
+        life: 3000 })
     }
 	}
+
+  doRegister(){
+    console.log(this.user)
+    if(this.user.name && this.user.username && this.user.password){
+      this.userService.addUser(this.user).subscribe({
+        next: (response) => {
+          this.messageService.add({
+            severity: 'success',
+            summary: 'Success',
+            detail: 'Usuário Cadastro com sucesso!',
+            life: 3000 });
+        }
+      })
+    }else{
+      this.messageService.add({
+        severity: 'error',
+        summary: 'Erro',
+        detail: 'Preencha todos os campos obrigatórios!',
+        life: 3000 })
+    }
+  }
 }

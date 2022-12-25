@@ -1,47 +1,60 @@
-<form class="center">
-    <div class="form">
-        <img class="image-icon" src="../../../assets/images/user_icon.png">
-        <app-input-validator
-            class="input input-login"
-            [variableFormControl]="name"
-            [labelTitle]="'Usuário'"
-            [labelRequiredInput]="label_required_user"
-            [validatorTextRequired]="'required'"
-            [inputType]="'text'"
-            [submited]="submited"
-            [colSizeClass]="'col-12'"
-            (input)="onChangeInput()"
-            [pAutoFocus]="true"
-            name="name"
-            inputId="name"
-            >
-        </app-input-validator>
-
-        <app-input-validator
-            class="input input-password"
-            [variableFormControl]="password"
-            [labelTitle]="'Senha'"
-            [labelRequiredInput]="label_required_password"
-            [validatorTextRequired]="'required'"
-            [inputType]="'password'"
-            [submited]="submited"
-            [colSizeClass]="'col-12'"
-            (input)="onChangeInput()"
-        >
-        </app-input-validator>
-
-        <div class="buttons">
-            <button pBt
-            nOK pButton type="submit" [label]="'Entrar'" (click)="onClick()"></button>
-        </div>
-        <div class="content-cadastro">
-            <div class="label-castro">
-                Não Possui Cadastro?
+<div class="center">
+    <div class="container">
+        <div class="box"></div>
+        <div class="container-forms">
+          <div class="container-info">
+            <div class="info-item">
+              <div class="table">
+                <div class="table-cell">
+                  <p>
+                    Have an account?
+                  </p>
+                  <div class="btn">
+                    Log in
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="link-cadastro" routerLink="/cadastro">
-                Cadastrar
+            <div class="info-item">
+              <div class="table">
+                <div class="table-cell">
+                  <p>
+                    Don't have an account? 
+                  </p>
+                  <div class="btn">
+                    Sign up
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
+          <div class="container-form">
+            <div class="form-item log-in">
+              <div class="table">
+                <div class="table-cell">
+                  <input [(ngModel)]="username" name="Username" placeholder="Username" type="text" />
+                  <input [(ngModel)]="password" name="Password" placeholder="Password" type="Password" />
+                  <div class="btn" (click)="doLogin()">
+                    Log in
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-item sign-up">
+              <div class="table">
+                <div class="table-cell">
+                  <input name="email" placeholder="Email" type="text" />
+                  <input [(ngModel)]="user.name" placeholder="First and Last Name" type="text" />
+                  <input [(ngModel)]="user.username" name="Username" placeholder="Username" type="text" />
+                  <input [(ngModel)]="user.password" name="Password" placeholder="Password" type="Password" />
+                  <div class="btn" (click)="doRegister()">
+                    Sign up
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-    </div>
-</form>
+      </div>
+</div>
 <app-toast></app-toast>

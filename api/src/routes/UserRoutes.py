@@ -56,7 +56,7 @@ async def get_user_by_username(user_name: str, db: AsyncSession = Depends(get_se
 
 
 # POST method
-@router.post("/", response_model=UserSchema.User)
+@router.post("/", response_model=UserSchema.UserCreate)
 async def create_user(user: UserSchema.UserCreate, db: AsyncSession = Depends(get_session)):
     """
     Create new user on database.
