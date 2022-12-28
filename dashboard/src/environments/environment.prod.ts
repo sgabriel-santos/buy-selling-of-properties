@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  SERVER_IP: 'http://localhost:8000/'
+  SERVER_IP: 'https://buy-selling-of-properties-api.herokuapp.com/'
 };

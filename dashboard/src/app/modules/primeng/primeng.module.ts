@@ -4,7 +4,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { AutoFocusModule } from 'primeng/autofocus';
 import { ButtonModule } from 'primeng/button';
-import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { DialogModule } from 'primeng/dialog';
 import { DropdownModule } from 'primeng/dropdown';
 import { ImageModule } from 'primeng/image';
@@ -24,7 +23,6 @@ import { MenuModule } from 'primeng/menu';
     InputTextModule,
     DialogModule,
     ToolbarModule,
-    ConfirmDialogModule,
     ToastModule,
     DropdownModule,
     AutoFocusModule,
@@ -39,7 +37,6 @@ import { MenuModule } from 'primeng/menu';
     InputTextModule,
     DialogModule,
     ToolbarModule,
-    ConfirmDialogModule,
     ToastModule,
     DropdownModule,
     AutoFocusModule,

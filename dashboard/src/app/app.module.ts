@@ -11,14 +11,12 @@ import { LoginComponent } from './components/login/login.component';
 //Import Module
 import { PrimengModule } from './modules/primeng/primeng.module';
 import { InterceptorModule } from './modules/interceptor/interceptor.module';
-import { DefaultComponentsModule } from './modules/default-components/default-components.module';
 import { MenuComponentModule } from './modules/menu-component/menu-component.module';
 
 //Routing
 import { AppRoutingModule } from './app-routing.module';
 
 //Dashboard
-import { NgApexchartsModule } from 'ng-apexcharts';
 import { HomeComponent } from './components/home/home.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
@@ -48,9 +46,7 @@ import { ImmobileDetailComponent } from './components/immobile-detail/immobile-d
     //Import Sub-Modules
     PrimengModule,
     InterceptorModule,
-    DefaultComponentsModule,
     MenuComponentModule,
-    NgApexchartsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

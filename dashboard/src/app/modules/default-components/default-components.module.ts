@@ -5,7 +5,6 @@ import { PrimengModule } from 'src/app/modules/primeng/primeng.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgxMaskModule, IConfig } from 'ngx-mask';
 //Components
-import { ConfirmDialogComponent } from 'src/app/default-components/confirm-dialog/confirm-dialog.component';
 import { ToastComponent } from 'src/app/default-components/toast/toast.component';
 import { InputValidatorComponent } from 'src/app/default-components/input-validator/input-validator.component';
 import { LabelErrorComponent } from 'src/app/default-components/label-error/label-error.component';
