@@ -19,7 +19,7 @@
                 <div class="col-8">
                     <div class="product-list-item add-cursor" (click)="onProductClicked(product)">
                         <div class="product-list-detail">
-                            <img class="image-apartamento" src="../../../assets/images/imagem_apartamento.jpg">
+                            <img class="image-apartamento" [src]="product.base64">
                             <div class="adress-detail-list">
                                 <div class="product-street">{{product.street}}</div>
                                 <div class="product-address">{{product.neighborhood + ', ' + product.city}}</div>
@@ -37,7 +37,6 @@
                         </div>
                         <div class="product-list-action">
                             <span class="product-price">R$ {{product.price}}</span>
-                            <!-- <p-button icon="pi pi-shopping-cart" label="Add to Cart" [disabled]="product.inventoryStatus === 'OUTOFSTOCK'"></p-button> -->
                         </div>
                     </div>
                 </div>
@@ -45,7 +44,9 @@
             <ng-template let-product pTemplate="gridItem">
                 <div class="col-12 md:col-4">
                     <div class="product-grid-item card add-cursor" (click)="onProductClicked(product)">
-                        <img class="image-apartamento" src="../../../assets/images/imagem_apartamento.jpg">
+                        <div class="image">
+                            <img class="image-apartamento" [src]="product.base64">
+                        </div>
                         <div class="product-grid-item-content">
                             <div class="property-type">Apartamento</div>
                             <div class="product-street">{{product.street}}</div>
@@ -62,7 +63,6 @@
                             </div>
                             <div class="product-grid-item-bottom">
                                 <span class="product-price">R$ {{product.price}}</span>
-                                <!-- <p-button icon="pi pi-shopping-cart" [disabled]="product.inventoryStatus === 'OUTOFSTOCK'"></p-button> -->
                             </div>
                         </div>
                     </div>

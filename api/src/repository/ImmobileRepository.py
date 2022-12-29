@@ -17,6 +17,10 @@ async def get_immobiles(db: AsyncSession):
     response = await db.execute(select(immobile_model))
     return response.scalars().all()
 
+async def get_immobiles_with_image(db: AsyncSession):
+    response = await db.execute("Select Distinct im.*, img.base64 from immobile im Join image img on im.id = img.id_immobile GROUP BY im.id")
+    return response.all()
+
 async def get_immobile_by_id(db: AsyncSession, immobile_id: int):
     response = await db.execute(select(immobile_model).where(immobile_model.id == immobile_id))
     return response.scalars().first()

@@ -1,11 +1,13 @@
 from . import (
     UserRoutes,
     SecurityRoutes,
-    ImmobileRoutes
+    ImmobileRoutes,
+    ImageRoutes
 )
 
 routes = [
     UserRoutes,
     SecurityRoutes,
-    ImmobileRoutes
+    ImmobileRoutes,
+    ImageRoutes
 ]

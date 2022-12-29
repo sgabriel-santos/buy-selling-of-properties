@@ -13,6 +13,10 @@ import { ToolbarModule } from 'primeng/toolbar';
 import { TooltipModule } from 'primeng/tooltip';
 import { DataViewModule } from 'primeng/dataview';
 import { MenuModule } from 'primeng/menu';
+import {GalleriaModule} from 'primeng/galleria';
+import {GMapModule} from 'primeng/gmap';
+import {CarouselModule} from 'primeng/carousel';
+import {BreadcrumbModule} from 'primeng/breadcrumb';
 
 @NgModule({
   declarations: [],
@@ -29,7 +33,11 @@ import { MenuModule } from 'primeng/menu';
     BrowserAnimationsModule,
     TooltipModule,
     DataViewModule,
-    MenuModule
+    MenuModule,
+    GalleriaModule,
+    GMapModule,
+    CarouselModule,
+    BreadcrumbModule
   ],
   exports:[
     ButtonModule,
@@ -43,7 +51,11 @@ import { MenuModule } from 'primeng/menu';
     BrowserAnimationsModule,
     TooltipModule,
     DataViewModule,
-    MenuModule
+    MenuModule,
+    GalleriaModule,
+    GMapModule,
+    CarouselModule,
+    BreadcrumbModule
   ],
   providers: [
     ConfirmationService,

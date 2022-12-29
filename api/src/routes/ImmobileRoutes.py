@@ -39,6 +39,21 @@ async def get_immobile_by_id(immobile_id: int, db: AsyncSession = Depends(get_se
     """
     return await ImmobileController.get_immobile_by_id(db, immobile_id=immobile_id)
 
+@router.get("/with_image/base64")
+async def get_immobiles_with_image(db: AsyncSession = Depends(get_session), current_user: UserSchema.User = Depends(get_current_user)):
+    """
+    Get immobiles from database.
+
+    Parameters:
+    -------
+    None.
+
+    Returns:
+    -------
+    immobile list.
+    """
+    return await ImmobileController.get_immobiles_with_image(db)
+
 
 # POST method
 @router.post("/", response_model=ImmobileSchema.ImmobileCreate)

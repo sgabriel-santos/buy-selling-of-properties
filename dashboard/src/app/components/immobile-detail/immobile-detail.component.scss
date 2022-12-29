@@ -1,0 +1,179 @@
+.menu{
+    border-right: 1px solid gray;
+    width: 15rem;
+    display: fixed;
+}
+
+.content{
+    padding: 0.5rem;
+    display: flex;
+}
+
+.gallery-price{
+    padding: 0 4rem 0 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+#gallery{
+    width: 100%!important;
+    height: 20rem;
+    overflow-y: hidden;
+}
+
+.description-price{
+    display: flex;
+    flex-direction: column;
+    width: 45vw;
+}
+
+.large-image-content{
+    width: 100%;
+    height: 100%;
+    margin: 1rem;
+}
+
+.large-image{
+    width: 30rem;
+    max-width: 100%;
+}
+
+.small-image{
+    padding-bottom: 1rem;
+    width:4rem;
+    height:4rem;
+    overflow: hidden;
+    overflow-y: hidden;
+}
+
+.description-card{
+    padding: 1rem;
+    text-align: justify;
+}
+
+.description-title{
+    margin-top: 1.5rem;
+}
+
+.description-card .title{
+    font-size: 1.3rem;
+}
+
+.description-card .description{
+    font-size: 1rem;
+}
+
+.icon-card{
+    width: 1.2rem;
+    height: 1.2rem;
+    color: gray;
+}
+
+.green{
+    color: green;
+}
+
+.icons{
+    display: flex;
+    justify-content: space-between;
+}
+
+.info{
+    display: flex;
+    padding: 0 0.7rem;
+    align-items: center;
+    flex-direction: column;
+}
+
+.schedule-visit{
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    box-sizing: border-box!important;
+}
+
+.seller-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.phone{
+    margin-top: 0.3rem;
+    font-size: 0.8rem;
+}
+.seller{
+    margin-top: -1px;
+}
+
+.partition{
+    width: 100%;
+    margin-top: 1rem;
+    border-bottom: 1px solid gray;
+}
+
+.total{
+    font-size: 1rem;
+}
+
+.icon-profile{
+    width: 40px;
+    height: 40px;
+}
+
+.immobile-info{
+    width: 100%;
+}
+
+.total-price{
+    display: flex;
+    justify-content: space-between;
+}
+
+.teste {
+    width: 14rem;
+    height: 15rem;
+    background-color: white;
+    border: 1px solid gray;
+    box-shadow: 3px 6px 5px 3px rgba(0,0,0,0.13);
+    border-radius: 10px;
+    top: 50%;
+    left: 75%;
+    z-index: 100;
+    position: fixed;
+}
+
+button{
+    background-color: #3957BD;
+    color: white;
+    height: 4.8vh;
+    width: 100%;
+    font-size: 0.7rem;
+    border-radius: 1px;
+    border: none;
+    margin-top: 1rem;
+    cursor: pointer;
+    box-sizing: border-box!important;
+}
+
+button:hover{
+    background-color: #1B43A6;
+}
+
+::ng-deep{
+    .ng-star-inserted.p-carousel-item.p-carousel-item-active{
+        margin: 0 0.2rem;
+    }
+
+    .p-breadcrumb{
+        border: none;
+    }
+
+    .p-component{
+        font-size: 0.9rem;
+    }
+}

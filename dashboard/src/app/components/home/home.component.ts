@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.immobileService.get_immobiles().subscribe({
+    this.immobileService.get_immobile_with_image().subscribe({
       next: response => this.products = response
     })
 

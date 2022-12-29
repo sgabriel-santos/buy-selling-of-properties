@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  SERVER_IP: 'http://localhost:8000/'
+  SERVER_IP: 'http://localhost:8000/',
+  URL: 'http://localhost:4200/'
 };
 
 /*

@@ -16,6 +16,11 @@
 }
 
 :host ::ng-deep {
+
+    .p-component{
+        font-size: 0.9rem;
+    }
+
     .p-dropdown {
         width: 14rem;
         font-weight: normal;
@@ -24,11 +29,17 @@
     .product-street {
         font-size: 1.9vw;
         font-weight: bold;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     
     .product-address {
         margin-bottom: 1rem;
         font-size: 1.4vw;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     
     .product-category-icon {
@@ -47,9 +58,17 @@
         align-items: center;
         padding: 1rem;
         width: 100%;
-    
+
+        .image{
+            width: 150px;
+            height: 50px;
+            overflow-y: hidden;
+        }
+        
         img {
             width: 150px;
+            // height: 50px;
+            overflow-y: hidden;
             box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
             margin-right: 2rem;
         }
@@ -94,6 +113,12 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+        }
+
+        .image{
+            width: 100%;
+            height: 170px;
+            overflow-y: hidden;
         }
     
         img {

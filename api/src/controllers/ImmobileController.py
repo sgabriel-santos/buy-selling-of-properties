@@ -20,6 +20,12 @@ async def get_immobiles(db: AsyncSession):
         return await ImmobileRepository.get_immobiles(db)
     except:
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Server Error")
+    
+async def get_immobiles_with_image(db: AsyncSession):
+    try:
+        return await ImmobileRepository.get_immobiles_with_image(db)
+    except:
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Server Error")
 
 async def get_immobile_by_id(db: AsyncSession, immobile_id: int):
     db_immobile = await ImmobileRepository.get_immobile_by_id(db, immobile_id=immobile_id)

@@ -27,4 +27,14 @@ export class ImmobileService {
   get_immobiles(): Observable<Immobile[]> {
     return this.http.get<Immobile[]>(this.immobileUrl, this.httpOptionsJson());
   }
+
+  get_immobile_by_id(immobile_id): Observable<Immobile>{
+    let url = `${this.immobileUrl}/${immobile_id}`
+    return this.http.get<Immobile>(url, this.httpOptionsJson());
+  }
+
+  get_immobile_with_image(): Observable<any[]>{
+    let url = `${this.immobileUrl}/with_image/base64`
+    return this.http.get<any[]>(url, this.httpOptionsJson())
+  }
 }
