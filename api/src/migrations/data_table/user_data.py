@@ -1,11 +1,7 @@
 user_data = [
     {
-        "name": "admin",
-        "username": "admin",
-        "password": "admin"
-    },
-    {
         "name": "Gabriel Batista",
+        "email": "gabrielpjl27@gmail.com",
         "username": "sgabriel_santos",
         "password": "123456"
     }

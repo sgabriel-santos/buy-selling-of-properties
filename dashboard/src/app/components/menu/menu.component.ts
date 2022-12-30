@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PrimeNGConfig, MenuItem } from 'primeng/api';
 import { Router } from '@angular/router';
+import { UserService } from 'src/app/services/user/user.service';
 import jwt_decode from "jwt-decode";
 
 @Component({
@@ -11,19 +12,39 @@ import jwt_decode from "jwt-decode";
 export class MenuComponent implements OnInit {
   items: MenuItem[];
   user: any = ''
+  image_profile: any;
+  image_profile_default = "../../../assets/images/user_icon.png"
   
   constructor(
     private primengConfig: PrimeNGConfig,
-    private router: Router
+    private router: Router,
+    private userService: UserService
   ) {}
 
   ngOnInit(): void {
     let token = localStorage.getItem('token');
     this.user = jwt_decode(token);
 
+    this.userService.getUserAuthenticated().subscribe({
+      next: (response) => {
+        this.user = response
+        this.image_profile = this.user.image
+      }
+    })
+
     this.primengConfig.ripple = true;
 
-    this.items = [{
+    this.items = [
+      {
+        items:[
+          {
+            label: 'Home',
+            icon: 'pi pi-home',
+            routerLink: '/'
+          }
+        ]
+      },
+      {
         label: 'Options',
         items: [{
             label: 'Edit Profile',

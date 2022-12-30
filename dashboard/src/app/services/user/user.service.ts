@@ -52,6 +52,16 @@ export class UserService {
     return this.http.get<User>(url, this.httpOptionsUrlEncoded());
   }
 
+  getUserAuthenticated(): Observable<User>{
+    const url = `${this.usersUrl}/get/authenticated/token`;
+    return this.http.get<User>(url, this.httpOptionsJson());
+  }
+
+  getUserByImmobileId(id_immobile: number): Observable<User>{
+    const url = `${this.usersUrl}/get/user/by/id_immobile?id_immobile=${id_immobile}`;
+    return this.http.get<User>(url, this.httpOptionsJson());
+  }
+
   /** POST: add a new user to the server */
   addUser(user: User): Observable<User> {
     return this.http.post<User>(this.usersUrl, user, this.httpOptionsJson())

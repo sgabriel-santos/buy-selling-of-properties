@@ -29,6 +29,9 @@ async def get_user_by_username_and_password(db: AsyncSession, user_name: str, pa
     response = await db.execute(select(user_model).where(and_(user_model.username == user_name, user_model.password == password)))
     return response.scalars().first()
 
+async def get_user_by_id_immobile(db: AsyncSession, id_immobile: int):
+    response = await db.execute(f"Select u.* from immobile i JOIN user u ON i.id = {id_immobile} and i.id_user = u.id")
+    return response.first()
 
 # UPDATE operations
 async def update_user(db: AsyncSession, user: UserSchema.UserCreate, user_id: int):

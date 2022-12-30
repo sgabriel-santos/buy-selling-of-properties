@@ -1,5 +1,5 @@
 <div class="profile">
-    <img class="image-icon-menu" src="../../../assets/images/user_icon.png"><br>
+    <img class="image-icon-menu" [src]="image_profile || image_profile_default" style="border-radius:50px">
     <div>{{user.name}}</div>
 </div>
 <p-menu [model]="items"></p-menu>

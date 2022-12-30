@@ -5,14 +5,15 @@
 }
 
 .content{
-    padding: 0.5rem;
     display: flex;
 }
 
 .gallery-price{
-    padding: 0 4rem 0 1rem;
+    padding: 1rem 4rem 0 1rem;
     display: flex;
+    width: 100%;
     flex-direction: column;
+    background-color: #f8f9fa;
 }
 
 #gallery{
@@ -140,7 +141,7 @@
     background-color: white;
     border: 1px solid gray;
     box-shadow: 3px 6px 5px 3px rgba(0,0,0,0.13);
-    border-radius: 10px;
+    border-radius: 5px;
     top: 50%;
     left: 75%;
     z-index: 100;
@@ -171,6 +172,7 @@ button:hover{
 
     .p-breadcrumb{
         border: none;
+        background-color: inherit;
     }
 
     .p-component{

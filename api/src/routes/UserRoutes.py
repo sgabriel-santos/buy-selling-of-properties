@@ -54,6 +54,36 @@ async def get_user_by_username(user_name: str, db: AsyncSession = Depends(get_se
     """
     return await UserController.get_user_by_username(db, user_name=user_name)
 
+@router.get("/get/authenticated/token", response_model=UserSchema.User)
+async def get_user_authenticated(db: AsyncSession = Depends(get_session), current_user: UserSchema.User = Depends(get_current_user)):
+    """
+    Get user authenticated.
+
+    Parameters:
+    -------
+    None
+
+    Returns:
+    -------
+    the user authenticated.
+    """
+    return await UserController.get_user_by_id(db, current_user.id)
+
+@router.get("/get/user/by/id_immobile", response_model=UserSchema.User)
+async def get_user_by_id_immobile(id_immobile: int, db: AsyncSession = Depends(get_session), current_user: UserSchema.User = Depends(get_current_user)):
+    """
+    Get user by immobile id.
+
+    Parameters:
+    -------
+    **id_immobile**: Immobile ID
+
+    Returns:
+    -------
+    the user owner of immobile.
+    """
+    return await UserController.get_user_by_id_immobile(db, id_immobile)
+
 
 # POST method
 @router.post("/", response_model=UserSchema.UserCreate)

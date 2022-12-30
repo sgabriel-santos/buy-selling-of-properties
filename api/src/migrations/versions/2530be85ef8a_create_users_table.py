@@ -24,8 +24,11 @@ def upgrade() -> None:
         table_name,
         sa.Column('id', sa.Integer, primary_key=True),
         sa.Column('name', sa.String(50), nullable=False),
+        sa.Column('email', sa.String(50), nullable=False),
         sa.Column('username', sa.String(50), nullable=False),
-        sa.Column('password', sa.String(50), nullable=False)
+        sa.Column('password', sa.String(50), nullable=False),
+        sa.Column('phone', sa.String(50)),
+        sa.Column('image', sa.Text(4294000000)),
     )
 
     populate_table(table_name, user_data)

@@ -57,11 +57,11 @@
 <div class="teste">
     <div class="schedule-visit">
         <div class="seller-info">
-            <img class="icon-profile" src="../../../assets/images/user_icon.png"><br>
-            <div class="seller">Gabriel Batista</div>
+            <img class="icon-profile" [src]="image_profile || image_profile_default" style="border-radius: 50px;"><br>
+            <div class="seller">{{user.name}}</div>
             <div class="phone">
                 <i class="pi pi-phone" style="font-size: 0.7rem;"></i>  
-                (92) 991358470
+                {{user.phone || '--'}}
             </div>
             <div class="partition"></div>
         </div>

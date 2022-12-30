@@ -1,1 +1,31 @@
-<p>edit-profile works!</p>
+<div class="content">
+    <div class="menu">
+        <app-menu></app-menu>
+    </div>
+    <div class="form">
+        <p-breadcrumb [model]="items"></p-breadcrumb>
+        <div class="profile">
+            <img class="icon-profile" [src]="image_profile || image_profile_default">
+            <i class="pi pi-camera" (click)="onClickEditProfileImage()"></i>
+        </div>
+        <span class="p-float-label">
+            <input [(ngModel)]="user.email" id="float-input" type="text" pInputText> 
+            <label for="float-input">email</label>
+        </span>
+        <span class="p-float-label">
+            <input [(ngModel)]="user.name" id="float-input" type="text" pInputText> 
+            <label for="float-input">Name</label>
+        </span>
+        <span class="p-float-label">
+            <input [(ngModel)]="user.username" id="float-input" type="text" pInputText> 
+            <label for="float-input">Username</label>
+        </span>
+        <span class="p-float-label">
+            <input [(ngModel)]="user.phone" id="float-input" type="text" pInputText> 
+            <label for="float-input">Phone</label>
+        </span>
+        <input type='file' (change)="readURL($event)" accept=".jpeg, .png, .jpg, .pdf" style="display: none;"/>
+        <button class="save" (click)="onClickSave()">Salvar</button>
+    </div>
+</div>
+<p-toast></p-toast>

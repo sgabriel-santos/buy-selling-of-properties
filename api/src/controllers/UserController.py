@@ -44,6 +44,12 @@ async def get_user_by_username_and_password(db: AsyncSession, user_name: str, pa
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="User not Found")
     return db_user
 
+async def get_user_by_id_immobile(db: AsyncSession, id_immobile: int):
+    db_user = await UserRepository.get_user_by_id_immobile(db, id_immobile)
+    if not db_user:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="User not Found")
+    return db_user
+
 
 # UPDATE operations
 async def update_user(db: AsyncSession, user: UserSchema.UserCreate, user_id: int, current_user_id: int):
