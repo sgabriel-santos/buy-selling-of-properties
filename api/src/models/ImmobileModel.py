@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, ForeignKey, TIMESTAMP
+from sqlalchemy import Column, Integer, String, ForeignKey, TIMESTAMP, Boolean
 from ..config.ConfigDB import Base
 
 class Immobile(Base):
@@ -12,6 +12,9 @@ class Immobile(Base):
     price = Column(String(50), nullable=False)
     datetime = Column(TIMESTAMP)
     n_rooms = Column(Integer, nullable=False)
+    n_bathrooms = Column(Integer)
+    garage = Column(Integer)
+    is_furnished = Column(Boolean)
     square_meters = Column(Integer, nullable=False)
     street = Column(String(50), nullable=False)
     neighborhood = Column(String(50), nullable=False)

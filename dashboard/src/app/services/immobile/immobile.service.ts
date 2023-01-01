@@ -37,4 +37,10 @@ export class ImmobileService {
     let url = `${this.immobileUrl}/with_image/base64`
     return this.http.get<any[]>(url, this.httpOptionsJson())
   }
+
+  /** POST: add a new Immobile to the server */
+  addImmobile(immobile: Immobile, images: any[]): Observable<Immobile> {
+    let obj = {"immobile": immobile, "images": images}
+    return this.http.post<Immobile>(this.immobileUrl, obj, this.httpOptionsJson())
+  }
 }

@@ -23,7 +23,7 @@ def upgrade() -> None:
     op.create_table(
         table_name,
         sa.Column('id', sa.Integer, primary_key=True),
-        sa.Column('id_immobile', sa.Integer, sa.ForeignKey('immobile.id'), nullable=False),
+        sa.Column('id_immobile', sa.Integer, nullable=False),
         sa.Column('base64', sa.Text(4294000000), nullable=False),
     )
 

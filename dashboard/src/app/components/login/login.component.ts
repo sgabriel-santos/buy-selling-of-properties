@@ -3,8 +3,8 @@ import { UserService } from 'src/app/services/user/user.service';
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from 'src/app/services/login/login.service';
 import { Router } from '@angular/router';
-import { FormControl, Validators } from '@angular/forms';
-import { ConfirmationService, MessageService } from 'primeng/api';
+import { MessageService } from 'primeng/api';
+import { User } from 'src/app/interfaces/user';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
   username: string;
   password: string;
 
-  user = {name: '', username: '', password: ''}
+  user: User = {}
 
   constructor(
     private messageService: MessageService,
@@ -63,8 +63,7 @@ export class LoginComponent implements OnInit {
 	}
 
   doRegister(){
-    console.log(this.user)
-    if(this.user.name && this.user.username && this.user.password){
+    if(this.user.email && this.user.name && this.user.username && this.user.password){
       this.userService.addUser(this.user).subscribe({
         next: (response) => {
           this.messageService.add({
@@ -72,6 +71,17 @@ export class LoginComponent implements OnInit {
             summary: 'Success',
             detail: 'Usuário Cadastro com sucesso!',
             life: 3000 });
+
+            this.user.email = this.user.name = this.user.username = this.user.password = ''
+            const el_containter = document.querySelector('.container') as HTMLDivElement
+            el_containter.classList.toggle('log-in')
+        },
+        error: () => {
+          this.messageService.add({
+            severity: 'error',
+            summary: 'Erro',
+            detail: 'Erro ao registrar usuário!',
+            life: 3000 })
         }
       })
     }else{

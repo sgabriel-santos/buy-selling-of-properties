@@ -59,8 +59,8 @@ export class ImmobileDetailComponent implements OnInit {
       })
   }
 
-  getNumberOfRoom(){
-    let sufix = (this.immobile.n_rooms > 1? 'quartos': 'quarto')
-    return `${this.immobile.n_rooms} ${sufix}`
-  }
+  getClass = (info) => `icon-card ${(info? 'green': '')}`
+  getInformation = (info) => info || '-'
+  getInfoImmobile = (info) => (info? 'Com mobília': 'Sem mobília')
+  getNumberOfRoom = () => `${this.immobile.n_rooms} ${(this.immobile.n_rooms > 1? 'quartos': 'quarto')}`
 }

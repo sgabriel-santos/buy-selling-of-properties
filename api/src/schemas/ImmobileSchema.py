@@ -9,6 +9,9 @@ class ImmobileCreate(BaseModel):
     description: Union[str, None] = None
     price: str
     n_rooms: int
+    n_bathrooms: Union[int, None] = None
+    garage: Union[int, None] = None
+    is_furnished: Union[bool, None] = None
     square_meters: int
     street: str
     neighborhood: str

@@ -1,1 +1,113 @@
-<p>register-immobile works!</p>
+<div class="content">
+    <div class="menu">
+        <app-menu></app-menu>
+    </div>
+    <div class="form">
+        <h3>Insira os dados do imóvel</h3>
+        <div class="grid p-fluid">
+            <div class="col-12 md:col-6">
+                <h5>Título</h5>
+                <div class="p-inputgroup">
+                    <input [(ngModel)]="immobile.title" type="text" pInputText placeholder="Título">         
+                </div>
+            </div>
+            
+            <div class="col-12 md:col-3">
+                <h5>Preço</h5>
+                <div class="p-inputgroup">
+                    <span class="p-inputgroup-addon">$</span>
+                    <input [(ngModel)]="immobile.price" type="number" min="0" pInputText placeholder="Preço">         
+                </div>
+            </div>
+            <div class="col-12 md:col-2">
+                <h5>Metros Quadrados</h5>
+                <div class="p-inputgroup">
+                    <span class="p-inputgroup-addon"><svg class="icon-card green" focusable="false" viewBox="0 0 24 24" color="rgb(var(--tokens-alias-color-icon-positive))" aria-hidden="true" fill="none" style="font-size: 24px;"><path fill="currentColor" fill-rule="evenodd" d="M1.5 8v8.25h21V8h-21zM3 14.75V9.5h3.75v3h1.5v-3h3v3h1.5v-3h3v3h1.5v-3H21v5.25H3z" clip-rule="evenodd"></path></svg></span>
+                    <input [(ngModel)]="immobile.square_meters" type="number" min="1" pInputText placeholder="120">      
+                </div>
+            </div>        
+            <div class="col-12 md:col-3">
+                <h5>Total de Quartos</h5>
+                <div class="p-inputgroup">
+                    <span class="p-inputgroup-addon"><svg class="icon-card green" focusable="false" viewBox="0 0 24 24" color="rgb(var(--tokens-alias-color-icon-positive))" aria-hidden="true" fill="none" style="font-size: 24px;"><path fill="currentColor" fill-rule="evenodd" d="M1.5 5H3v9h8.25V7.25H22.5V20H21v-4.5H3v4.125H1.5V5zM21 14h-8.25V8.75H21V14z" clip-rule="evenodd"></path><path fill="currentColor" fill-rule="evenodd" d="M7.125 7.25a2.625 2.625 0 100 5.25 2.625 2.625 0 000-5.25zM6 9.875a1.125 1.125 0 112.25 0 1.125 1.125 0 01-2.25 0z" clip-rule="evenodd"></path></svg></span>
+                    <input [(ngModel)]="immobile.n_rooms" type="number" min="1" pInputText placeholder="Nº">      
+                </div>
+            </div>
+            <div class="col-12 md:col-3">
+                <h5>Total de Banheiros</h5>
+                <div class="p-inputgroup">
+                    <span class="p-inputgroup-addon"><svg class="icon-card green" focusable="false" viewBox="0 0 24 24" color="rgb(var(--tokens-alias-color-icon-positive))" aria-hidden="true" fill="none" style="font-size: 24px;"><path fill="currentColor" d="M4.5 3.5h12V8h3v1.5H12V8h3V5H6v16.5H4.5v-18z"></path><path fill="currentColor" d="M12 11v3.703h1.5V11H12zm6 3.703V11h1.5v3.703H18zM15 11v5.555h1.5V11H15z"></path></svg></span>
+                    <input [(ngModel)]="immobile.n_bathrooms" type="number" min="1" pInputText placeholder="Nº">      
+                </div>
+            </div>
+            <div class="col-12 md:col-3">
+                <h5>Possui garagem?</h5>
+                <div class="p-inputgroup">
+                    <input type="checkbox" [(ngModel)]="hasGarage">
+                    <span class="p-inputgroup-addon"><svg class="icon-card green" focusable="false" viewBox="0 0 24 24" color="rgb(var(--tokens-alias-color-icon-disabled))" aria-hidden="true" fill="none" style="font-size: 24px;"><path fill="currentColor" fill-rule="evenodd" d="M3 18.5V11H1.5V9.5h1.598l2.93-6h12.075l2.8 6H22.5V11h-1.503l-.016 7.5H19.5v3H18v-3H6v3H4.5v-3H3zm16.248-9l-2.1-4.5H6.964L4.767 9.5h14.48zM4.5 11h14.997l-.005 2.25H15.75v1.5h3.74L19.483 17H4.5v-2.25h3.75v-1.5H4.5V11z" clip-rule="evenodd"></path></svg></span>
+                    <input [(ngModel)]="immobile.garage" type="number" min="1" [disabled]="!hasGarage" pInputText placeholder="Total Carros">      
+                </div>
+            </div>
+            <div class="col-12 md:col-2">
+                <h5>Mobiliado?</h5>
+                <div class="p-inputgroup">
+                    <span class="p-inputgroup-addon"><svg class="icon-card green" focusable="false" viewBox="0 0 24 24" color="rgb(var(--tokens-alias-color-icon-disabled))" aria-hidden="true" fill="none" style="font-size: 24px;"><path fill="currentColor" fill-rule="evenodd" d="M3 8.75V3.5h18v5.25h.162c.82 0 1.338.72 1.338 1.412v5.426c0 .692-.519 1.412-1.338 1.412H21v3h-1.5v-3h-15v3H3v-3h-.162C2.02 17 1.5 16.28 1.5 15.588v-5.426c0-.693.52-1.412 1.338-1.412H3zm16.5 6.75H21v-5.25h-1.5v5.25zM18 11.75v3.75H6v-3.75h12zm-13.5-1.5v5.25H3v-5.25h1.5zm1.5 0h12v-.088c0-.693.52-1.412 1.338-1.412h.162V5h-15v3.75h.162c.82 0 1.338.72 1.338 1.412v.088z" clip-rule="evenodd"></path></svg></span>
+                    <select [(ngModel)]="immobile.is_furnished" pInputText>
+                        <option value="yes">Sim</option>
+                        <option value="no">Não</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-12 md:col-2">
+                <h5>Cep</h5>
+                <div class="p-inputgroup">
+                    <input [(ngModel)]="immobile.cep" type="text" pInputText placeholder="00000-000">      
+                </div>
+            </div>
+            <div class="col-12 md:col-2">
+                <h5>Rua</h5>
+                <div class="p-inputgroup">
+                    <input [(ngModel)]="immobile.street" type="text" pInputText placeholder="Rua">      
+                </div>
+            </div>
+            <div class="col-12 md:col-2">
+                <h5>Bairro</h5>
+                <div class="p-inputgroup">
+                    <input [(ngModel)]="immobile.neighborhood" type="text" pInputText placeholder="Bairro">      
+                </div>
+            </div>
+            <div class="col-12 md:col-2">
+                <h5>Cidade</h5>
+                <div class="p-inputgroup">
+                    <input [(ngModel)]="immobile.city" type="text" pInputText placeholder="Cidade">      
+                </div>
+            </div>
+            <div class="col-12 md:col-3">
+                <h5>Estado</h5>
+                <div class="p-inputgroup">
+                    <input [(ngModel)]="immobile.state" type="text" pInputText placeholder="Estado">      
+                </div>
+            </div>
+            <div class="col-12 md:col-5">
+                <h5>Descrição</h5>
+                <div class="p-inputgroup">
+                    <textarea [(ngModel)]="immobile.description" cols="30" rows="8" pInputText style="resize: none;"></textarea>
+                </div>
+            </div>
+            <div class="col-12 md:col-6">
+                <h5>Adicione as imagens do imóvel</h5>
+                <p-fileUpload
+                    #fileUpload
+                    [customUpload]="true"
+                    (uploadHandler)="onUpload($event)"
+                    [multiple]="true"
+                    accept="image/*" 
+                    [auto]="true"
+                    chooseLabel="Selecionar Arquivos"
+                ></p-fileUpload> 
+            </div> 
+        </div>
+        <button class="save" (click)="onClickSave(fileUpload)">Salvar</button>
+    </div>
+</div>
+<p-toast></p-toast>

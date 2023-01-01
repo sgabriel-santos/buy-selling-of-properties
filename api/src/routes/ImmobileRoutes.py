@@ -57,7 +57,7 @@ async def get_immobiles_with_image(db: AsyncSession = Depends(get_session), curr
 
 # POST method
 @router.post("/", response_model=ImmobileSchema.ImmobileCreate)
-async def create_immobile(immobile: ImmobileSchema.ImmobileCreate, db: AsyncSession = Depends(get_session), current_user: UserSchema.User = Depends(get_current_user)):
+async def create_immobile(immobile: ImmobileSchema.ImmobileCreate, images: list[str], db: AsyncSession = Depends(get_session), current_user: UserSchema.User = Depends(get_current_user)):
     """
     Create new Immobile on database.
 
@@ -69,7 +69,7 @@ async def create_immobile(immobile: ImmobileSchema.ImmobileCreate, db: AsyncSess
     -------
     The new immobile created.
     """
-    return await ImmobileController.create_immobile(db=db, immobile=immobile)
+    return await ImmobileController.create_immobile(db=db, immobile=immobile, images=images)
 
 
 # PUT method

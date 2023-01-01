@@ -43,7 +43,7 @@
             <div class="form-item sign-up">
               <div class="table">
                 <div class="table-cell">
-                  <input name="email" placeholder="Email" type="text" />
+                  <input [(ngModel)]="user.email" name="email" placeholder="Email" type="text" />
                   <input [(ngModel)]="user.name" placeholder="First and Last Name" type="text" />
                   <input [(ngModel)]="user.username" name="Username" placeholder="Username" type="text" />
                   <input [(ngModel)]="user.password" name="Password" placeholder="Password" type="Password" />

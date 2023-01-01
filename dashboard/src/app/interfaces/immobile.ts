@@ -8,6 +8,9 @@ export interface Immobile {
     datetime?: number;
     n_rooms?: number;
     square_meters?: number;
+    n_bathrooms?: number;
+    garage?: number;
+    is_furnished?: boolean;
     street?: string;
     neighborhood?: string;
     city?: string;

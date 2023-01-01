@@ -1,14 +1,19 @@
 from sqlalchemy.ext.asyncio import AsyncSession
 from fastapi import HTTPException, status
 from ..repository import ImmobileRepository
+from . import ImageController
 from ..schemas import ImmobileSchema
+from ..models import ImmobileModel
+from ..middleware.utils_db import get_next_id
 
 # CREATE operations
-async def create_immobile(db: AsyncSession, immobile: ImmobileSchema.ImmobileCreate):
+async def create_immobile(db: AsyncSession, immobile: ImmobileSchema.ImmobileCreate, images: list[str]):
     try:
+        immobile_id = await get_next_id(db, ImmobileModel.Immobile.__tablename__)
         db_immobile = await ImmobileRepository.create_Immobile(db, immobile=immobile)
+        await ImageController.add_multiple_image(db, immobile_id, images)
         await db.commit()
-        return db_immobile
+        return immobile
     except:
         await db.rollback()
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Server Error")
